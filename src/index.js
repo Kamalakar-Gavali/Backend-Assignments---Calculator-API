@@ -52,6 +52,9 @@ function validate(operation,num1,num2)
         
     }
 }
+app.get('/',(req,res)=>{
+    res.send('Hello world!');
+})
 app.get('/add/:num1/:num2',(req,res)=>{
     res.send(validate(req.params.num1,req.params.num2));
 })
