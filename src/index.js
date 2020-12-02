@@ -29,11 +29,11 @@ function validate(operation,num1,num2)
     else{
         if(operation=='add')
         {
-        return({status: "success",message:"the sum of given two numbers",result: parseInt(num1)+parseInt(num2)});
+        return({status: "success",message:"the sum of given two numbers",sum: parseFloat(num1)+parseFloat(num2)});
         }
         if(operation=='sub')
         {
-            return({status: "success",message:"the difference of given two numbers",result: parseInt(num1)-parseInt(num2)});
+            return({status: "success",message:"the difference of given two numbers",difference: parseFloat(num1)-parseFloat(num2)});
         }
         if(operation=='div')
         {
@@ -42,12 +42,12 @@ function validate(operation,num1,num2)
             return({status: "error",message:"Cannot divide by zero"});
             }
             else{
-                return({status: "success",message:"The division of given numbers",result: parseInt(num1)/parseInt(num2)});
+                return({status: "success",message:"The division of given numbers",result: parseFloat(num1)/parseFloat(num2)});
             }
         }
         if(operation=='mul')
         {
-            return({status: "success",message:"The product of given numbers",result: parseInt(num1)*parseInt(num2)});
+            return({status: "success",message:"The product of given numbers",result: parseFloat(num1)*parseFloat(num2)});
         }
         
     }
