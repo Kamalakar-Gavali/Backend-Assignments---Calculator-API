@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const bodyParser = require("body-parser");
+const { json } = require('express');
 const port = 3000
 app.use(express.urlencoded());
 
@@ -19,13 +20,13 @@ function validate(operation,num1,num2)
     {
         return ({status: "error",message:"Invalid data types"});
     }
-    if(num1<-1000000 ||num2<-1000000||num1+num2<-1000000||num1*num2<-1000000)
-    {
-        return ({status: "error",message:"Underflow"});
-    }
-    if(num1>1000000 ||num2>1000000||num1+num2>1000000||num1*num2>1000000)
+    if(num1>1000000 ||num2>1000000||num1+num2>1000000)
     {
         return({status: "error",message:"Overflow"});
+    }
+    if(num1<(-1000000) ||num2<(-1000000)||num1+num2<(-1000000))
+    {
+        return ({status: "error",message:"Underflow"});
     }
     else{
         if(operation=='add')
@@ -85,7 +86,8 @@ app.get('/',(req,res)=>{
     res.send('Hello world!');
 })
 app.post('/add',(req,res)=>{
-    
+    let x=req.params.num2;
+    //res.send({s:x});
     res.send(validate("add",req.body.num1,req.body.num2));
 })
 
