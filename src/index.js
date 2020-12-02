@@ -80,11 +80,8 @@ app.get('/',(req,res)=>{
     res.send('Hello world!');
 })
 app.post('/add',(req,res)=>{
-    if(req.body={})
-    {
-    res.send(req.body);
-    }   
-    //res.send(validate("add",req.body.num1,req.body.num2));
+    
+    res.send(validate("add",req.body.num1,req.body.num2));
 })
 
 app.post('/sub',(req,res)=>{
