@@ -37,7 +37,7 @@ function validate(operation,num1,num2)
            else{
             return({status: "success",message:"the sum of given two numbers",sum: parseFloat(num1)+parseFloat(num2)});
            }*/
-           return({status: "success",message:"the sum of given two numbers",sum: (num1)+(num2)});
+           return({status: "success",message:"the sum of given two numbers",sum:(num1)+(num2)});
         }
         if(operation=='sub')
         {
