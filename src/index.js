@@ -20,11 +20,11 @@ function validate(operation,num1,num2)
     {
         return ({status: "error",message:"Invalid data types"});
     }
-    if(num1>1000000 ||num2>1000000||num1+num2>1000000)
+    if(num1>1000000 ||num2>1000000||num1+num2>1000000 ||(operation=='mul' && num1*num2>1000000))
     {
         return({status: "error",message:"Overflow"});
     }
-    if(num1<(-1000000) ||num2<(-1000000)||num1+num2<(-1000000))
+    if(num1<(-1000000) ||num2<(-1000000)||num1+num2<(-1000000)||(operation=='mul' && num1*num2<-1000000))
     {
         return ({status: "error",message:"Underflow"});
     }
