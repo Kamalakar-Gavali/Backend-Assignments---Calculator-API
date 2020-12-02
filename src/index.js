@@ -55,17 +55,17 @@ function validate(operation,num1,num2)
 app.get('/',(req,res)=>{
     res.send('Hello world!');
 })
-app.get('/add/:num1/:num2',(req,res)=>{
+app.post('/add/:num1/:num2',(req,res)=>{
     res.send(validate(req.params.num1,req.params.num2));
 })
 
-app.get('/sub/:num1/:num2',(req,res)=>{
+app.post('/sub/:num1/:num2',(req,res)=>{
     res.send(validate("sub",req.params.num1,req.params.num2));
 })
-app.get('/multiply/:num1/:num2',(req,res)=>{
+app.post('/multiply/:num1/:num2',(req,res)=>{
     res.send(validate("mul",req.params.num1,req.params.num2));
 })
-app.get('/divide/:num1/:num2',(req,res)=>{
+app.post('/divide/:num1/:num2',(req,res)=>{
     res.send(validate("div",req.params.num1,req.params.num2));
 })
 
