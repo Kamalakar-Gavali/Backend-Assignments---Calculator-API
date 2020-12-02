@@ -14,7 +14,7 @@ app.use(bodyParser.json())
 // your code goes here
 function validate(operation,num1,num2)
 {
-    if(num1 != parseInt(num1)||num2 !=parseInt(num2))
+    if((num1 != parseInt(num1)||num2 !=parseInt(num2))&&(num1 != parseFloat(num1)||num2 !=parseFloat(num2)))
     {
         return ({status: "error",message:"Invalid data types"});
     }
@@ -80,7 +80,11 @@ app.get('/',(req,res)=>{
     res.send('Hello world!');
 })
 app.post('/add',(req,res)=>{
-    res.send(validate("add",req.body.num1,req.body.num2));
+    if(req.body={})
+    {
+    res.send(req.body);
+    }   
+    //res.send(validate("add",req.body.num1,req.body.num2));
 })
 
 app.post('/sub',(req,res)=>{
